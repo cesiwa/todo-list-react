@@ -1,0 +1,118 @@
+.list{
+    padding: 15px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-y: scroll;
+    height: 40%;
+}
+.footer{
+    margin-top: auto;
+    padding: 5px 10px;
+    border: none;
+    border-top: 1px solid rgba(86, 84, 84, 0.107);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+   
+}
+.footer p{
+    font-size: 0.8em;
+    color: rgba(86, 84, 84, 0.507);
+    font-weight: 400;
+}
+.footer p:last-child{
+    cursor: pointer;
+}
+
+
+.lineThrough{
+    text-decoration: line-through;
+    color: rgba(145, 144, 144, 0.775) !important;
+}
+
+
+
+/* Temel Checkbox Ayarları */
+.checkbox {
+    display: flex;
+    min-height: 30px;
+    align-items: center;
+    position: relative;
+    padding-left: 35px;
+    margin-right: 15px;
+    cursor: pointer;
+    font-size: 25px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.checkbox:not(:first-child){
+    margin-top: 20px;
+}
+.checkbox > p{
+    margin: 0px;
+    margin-left: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #001747;
+}
+.checkbox:hover p{
+    color: #2E70FD;
+}
+/* Checkbox Gizliyoruz */
+.checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+/* Kendi Checkbox Alanımızı Oluşturuyoruz */
+.check {
+    position: absolute;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    height: 30px;
+    width: 30px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #ccc;
+}
+/* Seçilince Arkaplanı Renklendirdik */
+.checkbox input:checked + .check {
+    background-color: #00D8A7;
+    border:none;
+}
+/* Onay Alanını Oluşturduk, Eskisini Gizledik */
+.check:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+/* Onay Alanını Gösteriyoruz */
+.checkbox input:checked + .check:after {
+    display: block;
+}
+/* Onay Bölümünü Özelleştiriyoruz */
+.checkbox .check:after {
+    left: calc(50% - 5px);
+    top: 50%;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    /* 45 derece döndürüyoruz (üçü de farklı tarayıcılar için) */
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg) translate(-50%, -50%);
+}
+
+/* Checkbox Özelleştirmeleri Bitti */
+
+@media screen and (max-width: 700px){
+    .list{
+        height:350px;
+    }
+}
+    
